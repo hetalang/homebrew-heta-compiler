@@ -1,8 +1,8 @@
 class HetaCompiler < Formula
     desc "CLI for Heta Compiler"
     homepage "https://hetalang.github.io/#/heta-compiler/"
-    url "https://github.com/hetalang/heta-compiler/releases/download/v0.9.4/heta-compiler-macos.tar.gz"
-    sha256 "f338257ae04ab3036e8b82776a46e3cbf66c6cc6d6206882478d22be9579836e"
+    url "https://github.com/hetalang/heta-compiler/releases/download/v0.9.5/heta-compiler-macos.tar.gz"
+    sha256 "382dd05da46002f6d7d76b561b219fe79f964f11bc064f73c73060ed9a48d099"
     license "Apache-2.0"
   
     def install
