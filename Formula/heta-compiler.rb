@@ -1,27 +1,32 @@
 class HetaCompiler < Formula
     desc "CLI for Heta Compiler"
-    homepage "https://hetalang.github.io/#/heta-compiler/"
-    url "https://github.com/hetalang/heta-compiler/releases/download/v0.9.8/heta-compiler-macos-arm64.tar.gz"
-    sha256 "a2fe5313ffcdde63d5e990bb2094b20cb4528aafcf99b7ea932380abbdab9df3"
+    homepage "https://hetalang.github.io/heta-compiler/"
     license "Apache-2.0"
+    version "0.9.8"
+
+    on_macos do
+      on_arm do
+        url "https://github.com/hetalang/heta-compiler/releases/download/v0.9.8/heta-compiler-macos-arm64.tar.gz"
+        sha256 "a2fe5313ffcdde63d5e990bb2094b20cb4528aafcf99b7ea932380abbdab9df3"
+      end
+
+      on_intel do
+        url "https://github.com/hetalang/heta-compiler/releases/download/v0.9.8/heta-compiler-macos-x64.tar.gz"
+        sha256 "8d36ecccaa822e758a3e075eee4068d8733c46d89b24ce98ac10eb62f8b8d4e2"
+      end
+    end
   
     def install
-      # Rename the file from `heta-compiler` to `heta` and install it
-      mv "heta-compiler", "heta"
-      bin.install "heta"
-    end
-
-    def caveats
-        if Hardware::CPU.arm?
-          <<~EOS
-            This formula installs an x64 binary. If you are using an Apple Silicon Mac (M1/M2),
-            make sure Rosetta 2 is installed to run this software. You can install Rosetta 2 with:
-              softwareupdate --install-rosetta --agree-to-license
-          EOS
-        end
+      # mv "heta-compiler", "heta" # Rename the file
+      bin.install "heta-compiler" => "heta"
     end
   
     test do
       system "#{bin}/heta", "-v"
+    end
+
+    livecheck do
+      url :stable
+      strategy :github_latest
     end
 end
