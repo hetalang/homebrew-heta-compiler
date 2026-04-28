@@ -2,17 +2,17 @@ class HetaCompiler < Formula
     desc "CLI for Heta Compiler"
     homepage "https://hetalang.github.io/hetacompiler/"
     license "Apache-2.0"
-    version "v0.11.0"
+    version "v0.11.1"
 
     on_macos do
       on_arm do
-        url "https://github.com/hetalang/heta-compiler/releases/download/v0.11.0/heta-compiler-macos-arm64.tar.gz"
-        sha256 "0a88a8485f79a20542dfda169daae335042414750749c5377d6c17df28438d7f"
+        url "https://github.com/hetalang/heta-compiler/releases/download/v0.11.1/heta-compiler-macos-arm64.tar.gz"
+        sha256 "f4fe499a8e318753339f0f5e0bc3c2489a4b9e27d2bb2d12f6635d2d18644842"
       end
 
       on_intel do
-        url "https://github.com/hetalang/heta-compiler/releases/download/v0.11.0/heta-compiler-macos-x64.tar.gz"
-        sha256 "28c8e24a8e4b99ad4f8469154d77a43ca35b7d53970588586c6b3c68beda65fe"
+        url "https://github.com/hetalang/heta-compiler/releases/download/v0.11.1/heta-compiler-macos-x64.tar.gz"
+        sha256 "11b47ade5365da58ca3088698e3cbbf4b26760000597437bfba7eddcce5dca91"
       end
     end
   
